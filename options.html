@@ -7,7 +7,7 @@
 <body>
   <div class="container">
     <h1>JIRA Title Generator Settings</h1>
-    
+
     <div class="form-group">
       <label for="apiKey">OpenAI API Key:</label>
       <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
@@ -15,7 +15,7 @@
 
     <div class="templates-section">
       <h2>Template Configurations</h2>
-      
+
       <div class="template-config">
         <h3>User Story</h3>
         <textarea id="story-template">As a user, I want to {action} so that {benefit}</textarea>
@@ -34,6 +34,31 @@
       <div class="template-config">
         <h3>Feature Request</h3>
         <textarea id="feature-template">Add ability to {feature}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Technical Debt</h3>
+        <textarea id="tech-debt-template">Refactor: {component} to improve {aspect}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Security Issue</h3>
+        <textarea id="security-template">Security: {action} to prevent {vulnerability}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Performance</h3>
+        <textarea id="performance-template">Optimize: {component} for better {metric}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Documentation</h3>
+        <textarea id="documentation-template">Document: {component} {aspect}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Testing</h3>
+        <textarea id="testing-template">Test: {scope} for {scenario}</textarea>
       </div>
     </div>
 

@@ -34,10 +34,27 @@ async function generateTitle(request) {
 
   try {
     const templateInstructions = {
-      'story': 'Create a user story title that focuses on the user benefit and action',
-      'bug': 'Create a bug report title that clearly states the issue and affected component',
-      'task': 'Create a task title that describes the specific action needed',
-      'feature': 'Create a feature request title that emphasizes new functionality'
+      'story': 'Create a user story title that focuses on user benefit and action, emphasizing the value to the end user',
+      'bug': 'Create a bug report title that clearly states the issue, affected component, and impact',
+      'task': 'Create a task title that describes the specific technical action needed with clear deliverables',
+      'feature': 'Create a feature request title that emphasizes new functionality and its purpose',
+      'tech-debt': 'Create a technical debt title focusing on refactoring, cleanup, or architectural improvements',
+      'security': 'Create a security-focused title that emphasizes the protective action and threat being addressed',
+      'performance': 'Create a performance optimization title that highlights the component and metric being improved',
+      'documentation': 'Create a documentation task title that specifies what needs to be documented and why',
+      'testing': 'Create a testing task title that outlines the scope and scenario being tested'
+    };
+
+    const templateExamples = {
+      'story': '"As a mobile user, I want to save articles offline"',
+      'bug': '"Fix: Login timeout on slow connections"',
+      'task': '"Implement Redis caching for API responses"',
+      'feature': '"Add dark mode support for web interface"',
+      'tech-debt': '"Refactor: Authentication service for better maintainability"',
+      'security': '"Security: Implement rate limiting for API endpoints"',
+      'performance': '"Optimize: Database queries for faster search results"',
+      'documentation': '"Document: API authentication process for developers"',
+      'testing': '"Test: Payment workflow for international transactions"'
     };
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -61,6 +78,7 @@ async function generateTitle(request) {
 
                      Template type: ${template}
                      ${templateInstructions[template]}
+                     Example format: ${templateExamples[template]}
 
                      Response format: JSON with a single 'title' field
                      Maximum length: ${maxLength} characters`
