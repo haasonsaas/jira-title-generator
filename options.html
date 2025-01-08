@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JIRA Title Generator Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>JIRA Title Generator Settings</h1>
+    
+    <div class="form-group">
+      <label for="apiKey">OpenAI API Key:</label>
+      <input type="password" id="apiKey" placeholder="Enter your OpenAI API key">
+    </div>
+
+    <div class="templates-section">
+      <h2>Template Configurations</h2>
+      
+      <div class="template-config">
+        <h3>User Story</h3>
+        <textarea id="story-template">As a user, I want to {action} so that {benefit}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Bug Report</h3>
+        <textarea id="bug-template">Fix: {issue} in {component}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Task</h3>
+        <textarea id="task-template">{action} {object}</textarea>
+      </div>
+
+      <div class="template-config">
+        <h3>Feature Request</h3>
+        <textarea id="feature-template">Add ability to {feature}</textarea>
+      </div>
+    </div>
+
+    <button id="saveBtn">Save Settings</button>
+    <div id="status"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

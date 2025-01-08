@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JIRA Title Generator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h2>JIRA Title Generator</h2>
+    
+    <div class="template-section">
+      <label for="template">Template:</label>
+      <select id="template">
+        <option value="story">User Story</option>
+        <option value="bug">Bug Report</option>
+        <option value="task">Task</option>
+        <option value="feature">Feature Request</option>
+      </select>
+    </div>
+
+    <div class="format-section">
+      <label for="format">Title Format:</label>
+      <select id="format">
+        <option value="sentence">Sentence Case</option>
+        <option value="title">Title Case</option>
+        <option value="lowercase">Lowercase</option>
+      </select>
+    </div>
+
+    <div class="length-section">
+      <label for="maxLength">Max Length:</label>
+      <input type="number" id="maxLength" min="10" max="255" value="100">
+    </div>
+
+    <div class="current-title">
+      <h3>Current Title</h3>
+      <p id="generatedTitle">No title generated yet</p>
+      <button id="regenerateBtn" disabled>Regenerate</button>
+      <button id="copyBtn" disabled>Copy to Clipboard</button>
+    </div>
+
+    <div class="history-section">
+      <h3>History</h3>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
